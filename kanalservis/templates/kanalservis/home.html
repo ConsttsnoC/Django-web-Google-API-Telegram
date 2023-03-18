@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Каналсервис</title>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'kanalservis/style.css' %}">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		google.load('visualization', '1', {packages: ['table']});
+		google.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1hAe1Gch-vJkpjE3Y7Q-XxAii_WzwNS9N3tb96qv4z3U/edit#gid=0');
+		query.send(handleQueryResponse);
+	}
+
+	function handleQueryResponse(response) {
+		var data = response.getDataTable();
+		var table = new google.visualization.Table(document.getElementById('table_div'));
+		table.draw(data, {
+			showRowNumber: true,
+			width: '100%',
+			maxHeight: '500px',
+			pageSize: 15,
+		});
+
+		var total = 0;
+		for (var i = 0; i < data.getNumberOfRows(); i++) {
+			var cost = data.getValue(i, 2);
+			total += cost;
+		}
+
+		var totalRow = document.createElement('b');
+		totalRow.innerHTML = 'Total: ' + total;
+
+		var iframe = document.getElementsByTagName('iframe')[0];
+		iframe.parentNode.insertBefore(totalRow, iframe);
+	}
+</script>
+  </head>
+<body>
+	<header>
+	<img src="{% static 'kanalservis/logo1.png' %}" alt="Логотип" />
+	<a href="https://www.gilmanov.net/" class="btn btn-outline-secondary">Контакты</a>
+</header>
+	<div id="table_div"></div>
+	<div class="container">
+		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTqFkGwsmmDNBRN6OmzoNNdRpyk1ybuXhfY02szt9G5kZPBkH5N50iIZH1riqJ0pPaBBT0bKSqBVaII/pubchart?oid=2096359003&amp;format=interactive"></iframe>
+	</div>
+	<footer>
+		<p>&copy; 2023 Каналсервис</p>
+	</footer>
+</body>
+</html>

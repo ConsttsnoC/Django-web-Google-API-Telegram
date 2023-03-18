@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  web:
+    # Берем Dockerfile из каталога app
+    build: .
+    # Запускаем тестовый сервер
+    command: python manage.py runserver 0.0.0.0:8000
+    # куда будут помещены данные из каталога app
+    volumes:
+      - ./app/:/usr/src/app/
+    # Открываем порт 8000 внутри и снаружи
+    ports:
+      - 8000:8000
+    # Файл содержащий переменные для контейнера
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+    networks:
+      - my_network
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_DB: mydatabasetest
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 624852
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=
+    networks:
+      - my_network
+
+volumes:
+  postgres_data:
+
+networks:
+  my_network:
