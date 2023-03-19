@@ -8,7 +8,7 @@ import telegram
 
 
 
-# Define the start function
+# Определяем функцию start(), которая отправляет приветственное сообщение пользователю
 def start(update, context):
     """
         Функция для обработки команды /start.
@@ -53,7 +53,7 @@ def order(update, context):
     cur.execute("SELECT order_number, date FROM my_table WHERE date >= %s AND date < %s", (thirty_days_ago, date.today()))
     expired_orders = cur.fetchall()
 
-    # Close the database connection
+    # Закрываем соединение с базой данных
     cur.close()
     conn.close()
 
@@ -73,7 +73,7 @@ def order(update, context):
     else:
         context.bot.send_message(chat_id=update.message.chat_id, text="Нет просроченных поставок за последние 30 дней.")
 
-
+# Создаем объект бота Telegram и токен
 bot = telegram.Bot(token='5912200140:AAGPyK-PoMAwPVEaAKKNBC_-6YhX79AbzD0')
 
 def send_order_message_at_time(bot, chat_id, send_time):

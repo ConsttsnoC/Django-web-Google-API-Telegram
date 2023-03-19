@@ -20,10 +20,10 @@ from django.conf import settings
 from kanalservis import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.home,name = 'home'),
+    path('admin/', admin.site.urls), # URL-адрес админ-панели Django
+    path('',views.home,name = 'home'), # URL-адрес для обработки запроса к функции home() в файле views.py
 
 ]
 
-
+# Добавляем URL-адреса для обслуживания медиа-файлов
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
