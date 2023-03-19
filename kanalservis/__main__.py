@@ -16,7 +16,7 @@ def get_service_simple():
 
 def get_service_sacc():
     """
-    Могу читать и (возможно) писать в таблицы кот. выдан доступ
+    Могу читать и (возможно) писать в таблицы кот. Выдан доступ
     для сервисного аккаунта приложения
     sacc-1@privet-yotube-azzrael-code.iam.gserviceaccount.com
     :return:
@@ -48,9 +48,10 @@ print(resp)
 
 def get_database_connection():
     conn = psycopg2.connect(
-        dbname="",
-        user="",
-        password=""
+        port="5432",
+        dbname="НАЗВАНИЕ БД",
+        user="ИМЯ ПОЛЬЗОВАТЕЛЯ",
+        password="ПАРОЛЬ"
     )
     return conn
 

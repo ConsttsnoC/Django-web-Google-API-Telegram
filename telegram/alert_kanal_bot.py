@@ -1,4 +1,4 @@
-chat_id = '203790724'
+chat_id = 'ID-ЧАТА'
 from telegram.ext import Updater, CommandHandler
 from datetime import date, timedelta
 import psycopg2
@@ -38,11 +38,10 @@ def order(update, context):
 
     # Подключаемся к базе данных
     conn = psycopg2.connect(
-        database="",
-        user="",
-        password="",
-        host="",
-        port=""
+        database="НАЗВАНИЕ БД",
+        user="ИМЯ ПОЛЬЗОВАТЕЛЯ",
+        password="ПАРОЛЬ",
+        port="5432"
     )
     cur = conn.cursor()
 
@@ -97,11 +96,10 @@ def send_order_message_at_time(bot, chat_id, send_time):
 
         # Устанавливаем соединение с базой данных
         conn = psycopg2.connect(
-            database="",
-            user="",
-            password="",
-            host="",
-            port=""
+            database="НАЗВАНИЕ БД",
+            user="ИМЯ ПОЛЬЗОВАТЕЛЯ",
+            password="ПАРОЛЬ",
+            port="5432"
         )
         cur = conn.cursor()
 
@@ -147,7 +145,7 @@ def send_order_message_at_time(bot, chat_id, send_time):
 # добавляем обработчик команды /order и отправляет сообщение с заказом в указанное время.
 order_handler = CommandHandler('order', order)
 dispatcher.add_handler(order_handler)
-send_order_message_at_time(bot, '', '12:38')
+send_order_message_at_time(bot, 'ID-ЧАТА', '12:38')
 
 
 

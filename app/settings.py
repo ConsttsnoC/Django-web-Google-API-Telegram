@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': environ.get('POSTGRES_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': environ.get('POSTGRES_DB', BASE_DIR / 'db.sqlite3'),
-        'USER': environ.get('POSTGRES_USER', 'user'),
-        'PASSWORD': environ.get('POSTGRES_PASSWORD', 'password'),
-        'HOST': environ.get('POSTGRES_HOST', 'localhost'),
-        'PORT': environ.get('POSTGRES_PORT', '5432'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': environ.get('POSTGRES_DB', 'НАЗВАНИЕ БД'),
+        'USER': environ.get('POSTGRES_USER', 'ИМЯ ЮЗЕРА'),
+        'PASSWORD': environ.get('POSTGRES_PASSWORD', 'ПАРОЛЬ'),
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 

@@ -24,12 +24,17 @@
  <div>
       <h1>Всем привет, я <a href="https://www.gilmanov.net/" target="_blank">Константин</a> <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
       <h3>Этот репозиторий содержит решение тестового задания по созданию Python-приложения:
-        <li>Создано на Django</li>
-        <li>База данных Postgresql</li>
-        <li>Одностраничное веб-приложение</li>
-        <li>Telegram-bot с оповещением</li>
-        <li>Использование Google API</li>
-        <li>Форматирование кода с помощью autopep8</li></h3>
+
+  <center>
+<h2><a href="https://knalser.pythonanywhere.com/">DEMO VERSION</a></h2>
+</center>
+
+<li>Создано на Django</li>
+<li>База данных Postgresql</li>
+<li>Одностраничное веб-приложение</li>
+<li>Telegram-bot с оповещением</li>
+<li>Использование Google API</li>
+<li>Форматирование кода с помощью autopep8</li></h3>
 
 
 <h3><img src="https://img.icons8.com/dusk/64/000000/rocket.png" height="30"/> Инструкция по работе с приложением <img src="https://img.icons8.com/dusk/64/000000/rocket.png" height="30"/></h3>
@@ -50,6 +55,7 @@
 <p>ALTER TABLE IF EXISTS public.my_table</p>
     <p>OWNER to postgres;</p>
 	 </li>
+    <li>Переходим в файл  <code>settings.py</code> и в <code>DATABASES</code> вписываем ваши данные из Postgresql</li>
     <li>Переходим в файл  <code>.env.dev</code> и заменяем на ваши данные из Postgresql</li>
     <li>Переходим в файл <code>__main__.py</code> и заменяем на ваши данные из Postgresql в функции <code>get_database_connection()</code></li>
     <li>Переходим в файл  <code>docker-compose.yml</code> и заменяем на ваши данные из Postgresql</li>

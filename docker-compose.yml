@@ -21,9 +21,9 @@ services:
       - my_network
     environment:
       POSTGRES_HOST: db
-      POSTGRES_DB: mydatabasetest
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 624852
+      POSTGRES_DB: НАЗВАНИЕ БД
+      POSTGRES_USER: ИМЯ ПОЛЬЗОВАТЕЛЯ
+      POSTGRES_PASSWORD: ПАРОЛЬ
 
   db:
     image: postgres
@@ -32,9 +32,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=
-      - POSTGRES_PASSWORD=
-      - POSTGRES_DB=
+      - POSTGRES_USER=ИМЯ ПОЛЬЗОВАТЕЛЯ
+      - POSTGRES_PASSWORD=ПАРОЛЬ
+      - POSTGRES_DB=НАЗВАНИЕ БД
     networks:
       - my_network
 
