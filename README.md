@@ -75,6 +75,7 @@
 
 <h3><img src="https://img.icons8.com/dusk/64/000000/rocket.png" height="30"/> Инструкция по работе с приложением <img src="https://img.icons8.com/dusk/64/000000/rocket.png" height="30"/></h3>
 <ul>
+    <li>Можете теперь перейти по ссылке на локальный host <code>http://127.0.0.1:8000/</code></li>
     <li>Переходим в файл <code>__main__.py</code> и запускаем (RUN) его</li>
     <li>Заходим к себе в приложение <code>telegram</code> и находим в поиске <code>@userinfobot</code> и берем оттуда свой id-чата
     <li>Переходим в папку <code>telegram</code> и открываем там файл <code>alert_kanal_bot.py</code> и в переменную <code>chat_id</code> и в обработчик-команд <code>send_order_message_at_time</code> ваш id-чата</li>
