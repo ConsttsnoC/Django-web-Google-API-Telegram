@@ -77,7 +77,8 @@
 <ul>
     <li>Переходим в файл <code>__main__.py</code> и запускаем (RUN) его</li>
     <li>Заходим к себе в приложение <code>telegram</code> и находим в поиске <code>@userinfobot</code> и берем оттуда свой id-чата
-    <li>Переходим в папку <code>telegram</code> и открываем там файл <code>alert_kanal_bot.py</code> и вставляем в переменную <code>chat_id</code> и в обработчик-команд <code>send_order_message_at_time</code> ваш id-чата</li>
+    <li>Переходим в папку <code>telegram</code> и открываем там файл <code>alert_kanal_bot.py</code> и в переменную <code>chat_id</code> и в обработчик-команд <code>send_order_message_at_time</code> ваш id-чата</li>
     <li>В файле <code>alert_kanal_bot.py</code> меняем в ДВУХ переменных <code>conn</code> данные на ваши данные из Postgresql</li>
     <li>Запускаем (RUN)  файл <code>alert_kanal_bot.py</code></li>
+     <li>Переходим по ссылке в чат-бот <code>@alert_kanal_bot</code></li>
 </ul>

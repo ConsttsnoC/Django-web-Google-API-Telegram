@@ -99,6 +99,7 @@ def send_order_message_at_time(bot, chat_id, send_time):
             database="НАЗВАНИЕ БД",
             user="ИМЯ ПОЛЬЗОВАТЕЛЯ",
             password="ПАРОЛЬ",
+            host="localhost",
             port="5432"
         )
         cur = conn.cursor()

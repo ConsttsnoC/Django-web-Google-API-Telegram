@@ -85,7 +85,8 @@ def insert_data_to_postgresql(data):
         for row in data:
             cur.execute(
                 sql.SQL("INSERT INTO my_table (name, order_number, price, date) VALUES ({}, {}, {}, {})").format(
-                    sql.Literal(row[0]), sql.Literal(row[1]), sql.Literal(row[2]), sql.Literal(row[3])
+                    sql.Literal(row[0]), sql.Literal(row[1]), sql.Literal(row[2]),
+                    sql.SQL("TO_DATE({}, 'DD.MM.YYYY')").format(sql.Literal(row[3]))
                 )
             )
             # Calculate the price in rubles and insert it into the database
